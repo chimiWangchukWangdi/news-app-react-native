@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { NativeBaseProvider, Center, } from "native-base";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { theme } from "./src/styles/theme"
+import Navigation from "./src/components/navigation/navigation";
 
 export default function App() {
     useFonts({
@@ -12,10 +13,10 @@ export default function App() {
     return (
         <SafeAreaProvider>
             <NativeBaseProvider theme={theme}>
-                <Center>Hello world</Center>
                 <StatusBar translucent
                            backgroundColor="transparent"
                 />
+                <Navigation />
             </NativeBaseProvider>
         </SafeAreaProvider>
     );
