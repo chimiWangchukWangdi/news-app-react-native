@@ -1,13 +1,13 @@
 import React from "react"
 import { Center, Text } from "native-base";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faMugSaucer } from '@fortawesome/free-solid-svg-icons/faMugSaucer'
+import { faMugSaucer } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function HomeScreen() {
+export default function ProfileScreen() {
     return (
         <Center>
-            <Text>Hello world</Text>
+            <Text>Profile Screen</Text>
             <FontAwesomeIcon icon={faMugSaucer} />
         </Center>
 

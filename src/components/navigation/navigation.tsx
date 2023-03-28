@@ -1,16 +1,39 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from "../home-screen/home-screen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomeScreen from "../../screens/home-screen/home-screen";
+import CategoryScreen from "../../screens/category-screen/category";
+import ProfileScreen from "../../screens/profile-screen/profile-screen";
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faHome, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function Navigation() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-            </Stack.Navigator>
+            <Tab.Navigator
+                screenOptions={({route}) => ({
+                    tabBarIcon: ({ color}) => {
+                        let iconName;
+
+                        if (route.name === 'Home') {
+                            iconName = faHome;
+                        } else if (route.name === 'Category') {
+                            iconName = faSearch;
+                        }else if (route.name === 'Profile') {
+                            iconName = faPerson;
+                        }
+
+                        return <FontAwesomeIcon icon= {iconName} size={18} color={color}/>
+                    },
+                    tabBarActiveTintColor: 'tomato',
+                    tabBarInactiveTintColor: 'gray',
+                })}>
+                <Tab.Screen name="Home" component={HomeScreen}/>
+                <Tab.Screen name="Category" component={CategoryScreen}/>
+                <Tab.Screen name="Profile" component={ProfileScreen}/>
+            </Tab.Navigator>
         </NavigationContainer>
     );
 }
