@@ -1,8 +1,15 @@
 import React from "react"
-import { Center } from "native-base";
+import { Center, Text } from "native-base";
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faMugSaucer } from '@fortawesome/free-solid-svg-icons/faMugSaucer'
+
 
 export default function HomeScreen() {
-    return(
-        <Center>Hello world</Center>
+    return (
+        <Center>
+            <Text>Hello world</Text>
+            <FontAwesomeIcon icon={faMugSaucer} />
+        </Center>
+
     );
 }
