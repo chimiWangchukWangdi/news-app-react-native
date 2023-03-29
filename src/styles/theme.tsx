@@ -1,11 +1,13 @@
 import { extendTheme } from 'native-base';
 
-export const theme = extendTheme({
+export const customTheme = extendTheme({
     fonts: {
         body: 'MontRegular',
     },
-    sizes: {
-        '0': '0px',
-        '2': '2px'
-    },
+    colors: {
+        primary: {
+            100: 'rgb(14,46,77)',
+        },
+        yellow: 'rgba(244,179,22)',
+    }
 });

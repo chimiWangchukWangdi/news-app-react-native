@@ -1,39 +1,17 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../../screens/home-screen/home-screen";
-import CategoryScreen from "../../screens/category-screen/category";
-import ProfileScreen from "../../screens/profile-screen/profile-screen";
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faHome, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons'
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import BottomTabs from "./bottom-tabs";
+import CustomDrawer from "./customDrawer";
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 function Navigation() {
     return (
         <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={({route}) => ({
-                    tabBarIcon: ({ color}) => {
-                        let iconName;
-
-                        if (route.name === 'Home') {
-                            iconName = faHome;
-                        } else if (route.name === 'Category') {
-                            iconName = faSearch;
-                        }else if (route.name === 'Profile') {
-                            iconName = faPerson;
-                        }
-
-                        return <FontAwesomeIcon icon= {iconName} size={18} color={color}/>
-                    },
-                    tabBarActiveTintColor: 'tomato',
-                    tabBarInactiveTintColor: 'gray',
-                })}>
-                <Tab.Screen name="Home" component={HomeScreen}/>
-                <Tab.Screen name="Category" component={CategoryScreen}/>
-                <Tab.Screen name="Profile" component={ProfileScreen}/>
-            </Tab.Navigator>
+            <Drawer.Navigator drawerContent={(props) => <CustomDrawer {...props} />}>
+                <Drawer.Screen name="News App" component={BottomTabs} />
+            </Drawer.Navigator>
         </NavigationContainer>
     );
 }
