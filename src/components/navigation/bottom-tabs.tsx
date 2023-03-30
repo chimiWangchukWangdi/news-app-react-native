@@ -4,12 +4,11 @@ import HomeScreen from "../../screens/home-screen/home-screen";
 import CategoryScreen from "../../screens/category-screen/category";
 import ProfileScreen from "../../screens/profile-screen/profile-screen";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faHome, faPerson, faSearch, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const Tab = createBottomTabNavigator();
 
 function BottomTabs() {
-    const [open, setOpen] = React.useState(false);
 
     return (
         <Tab.Navigator

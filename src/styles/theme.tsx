@@ -8,6 +8,6 @@ export const customTheme = extendTheme({
         primary: {
             100: 'rgb(14,46,77)',
         },
-        yellow: 'rgba(244,179,22)',
+        yellow: 'rgb(244,179,22)',
     }
 });
