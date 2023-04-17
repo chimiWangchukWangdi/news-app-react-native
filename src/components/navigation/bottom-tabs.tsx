@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../../screens/home-screen/home-screen";
-import CategoryScreen from "../../screens/category-screen/category";
+import CategoryScreen from "../../screens/category-screen/category-screen";
 import ProfileScreen from "../../screens/profile-screen/profile-screen";
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHome, faPerson, faSearch } from '@fortawesome/free-solid-svg-icons'

@@ -5,9 +5,9 @@ export const customTheme = extendTheme({
         body: 'MontRegular',
     },
     colors: {
-        primary: {
+        darkblue: {
             100: 'rgb(14,46,77)',
         },
-        yellow: 'rgb(244,179,22)',
+        yellow: '#f4b316',
     }
 });

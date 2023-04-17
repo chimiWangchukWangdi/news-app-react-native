@@ -6,6 +6,8 @@ import { NativeBaseProvider, Center, } from "native-base";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { customTheme } from "./src/styles/theme"
 import Navigation from "./src/components/navigation/navigation";
+import { Provider } from "react-redux";
+import { store } from "./src/store/store";
 
 export default function App() {
     useFonts({
@@ -13,12 +15,14 @@ export default function App() {
     });
     return (
         <SafeAreaProvider>
-            <NativeBaseProvider theme={customTheme}>
-                <StatusBar translucent
-                           backgroundColor="transparent"
-                />
-                <Navigation />
-            </NativeBaseProvider>
+            <Provider store={store}>
+                <NativeBaseProvider theme={customTheme}>
+                    <StatusBar translucent
+                               backgroundColor="transparent"
+                    />
+                    <Navigation/>
+                </NativeBaseProvider>
+            </Provider>
         </SafeAreaProvider>
     );
 }

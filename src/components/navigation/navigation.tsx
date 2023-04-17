@@ -22,7 +22,7 @@ function LogoTitle(props) {
                 <FontAwesomeIcon icon={faBell} color="white" size={18} />
                 <Box
                     position="absolute" top="0px" right="0"
-                    bg="primary.100" width="10px" height="10px" rounded="full" zIndex={1} _text={{
+                    bg="darkblue.100" width="10px" height="10px" rounded="full" zIndex={1} _text={{
                 }} />
             </HStack>
         </HStack>
